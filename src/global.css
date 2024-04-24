@@ -1,0 +1,21 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply m-auto ;
+}
+
+body {
+  @apply bg-pink-50
+
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Gesit.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

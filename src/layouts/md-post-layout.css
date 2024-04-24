@@ -1,0 +1,15 @@
+h1 {
+  @apply text-xl font-bold;
+}
+
+h2 {
+  @apply text-xl font-bold;
+}
+
+h3 {
+  @apply text-xl font-bold;
+}
+
+time {
+  @apply  italic text-slate-200 pb-4;
+}

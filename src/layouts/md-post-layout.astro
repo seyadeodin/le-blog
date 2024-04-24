@@ -1,0 +1,24 @@
+---
+import Layout from "./layout.astro";
+import './md-post-layout.css';
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+<div class="w-[960px] min-h-screen py-8 px-4 m-auto">
+  <article>
+  <div class="">
+{/*<p>by {frontmatter.author}</p>*/}
+    <time>{new Date(frontmatter.pubDate).toLocaleString('pt-BR', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric'
+    })}</time>
+</div>
+    <h1 class="text-3xl mb-1">{frontmatter.title}</h1>
+    <div class="mb-4 italic text-lg">{frontmatter?.subtitle}</div>
+    <slot />
+  </article>
+</div>
+
+</Layout>

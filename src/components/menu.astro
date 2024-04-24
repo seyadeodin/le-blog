@@ -1,0 +1,19 @@
+---
+import MenuButton from "./menu-button.astro";
+---
+<menu class="flex justify-between w-full text-lg my-8">
+  <div class="flex gap-x-8 text-xl items-center">
+    <a href="/" class="font-bold text-yellow-500 ">
+      <span class="text-red-500">{'{'}</span> 
+      Lucas Andrade 
+      <span class="text-blue-500">{'}'}</span>
+    </a>
+    <MenuButton label="🪽 about" href="/about"/>
+    <MenuButton label="🫏 blog" href="/blog"/>
+    <MenuButton label="🪼 projects" href="/projects"/>
+  </div>
+  <div class="flex gap-x-6">
+    <button>en/us</button>
+    <button>theme</button>
+  </div>
+</menu>

@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/layout.astro";
+import PostCard from '../components/post-card.astro'
+import Catto from '/public/svg-drawings/catto.svg'
+
+const allPosts = await Astro.glob('../pages/posts/*.md*')
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>A Daredevil Dev Blog</title>
+	</head>
+	<body>
+    <Layout title="Home">
+      <main class="flex flex-row gap-8 items-center">
+        <div>
+          <h1 class="text-3xl font-bold">Hi, I'm Lucas</h1>
+          <p class="text-base mt-4 text-slate-900 leading-relaxed">I'm a Software Developer whose expertise in the JS environment. I've developed mobile apps, websites and backend servers. Here you may catch a
+            <a href="/blog" class="underline text-emerald-500"> glimpse</a> 
+            of what I'm exploring, all the exciting discoveries that come with it, and the
+            <a href="/projects" class="underline text-emerald-500">cool stuff</a>
+            I'm building with that 🧭
+          </p>
+
+        </div>
+        <img src={'/public/svg-drawings/flower-desert.svg'} class="h-64"/>
+        
+      </main>
+     
+      <h1 class="text-2xl font-semibold mt-8">Recent Posts</h1>
+      <div class="grid grid-cols-2 gap-6 mt-4">
+       {allPosts.map(post => (
+         <PostCard post={post.frontmatter} url={post.url}/>
+       ))}
+      </div>
+
+    </Layout>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+---
+import Menu from '../components/menu.astro'
+
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="stylesheet" href="/src/global.css" />
+	</head>
+	<body class="flex min-h-screen">
+    <div class="m-auto w-[920px] min-h-screen px-4">
+      <Menu/>
+      <slot />
+    </div>
+	</body>
+</html>
